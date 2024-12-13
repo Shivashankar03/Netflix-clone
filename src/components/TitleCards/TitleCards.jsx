@@ -7,14 +7,14 @@ const TitleCards = ({ title, category }) => {
   const [apiData, setApiData] = useState([]);
   const cardsRef = useRef();
 
-  const options = {
-    method: "GET",
-    headers: {
-      accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiNThhZjAwMWNkZWI2N2JjY2IzZWJmMGM2NDk5ZGI1ZiIsIm5iZiI6MTczMzkxODQ3Mi4wMjcsInN1YiI6IjY3NTk3ZjA4NWMzNjRjNGE2N2ZmZDk5OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.7-k2ukZOXNkGJnNcrAwC30cnRwJLkUUeOUEWdTMMt8U",
-    },
-  };
+ const options = {
+  method: "GET",
+  headers: {
+    accept: "application/json",
+    Authorization: `Bearer ${process.env.REACT_APP_TMDB_API_KEY}`,
+  },
+};
+
 
   const handleWheel = (event) => {
     event.preventDefault();
